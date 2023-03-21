@@ -15,3 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-light-black {
+  background-color: #141414; /* Adjust the opacity to change the darkness of the background color */
+}
+
+

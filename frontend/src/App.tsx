@@ -6,7 +6,6 @@ interface Movie {
   title: string;
   poster_path: string;
   id:number;
-
 }
 
 const App = () => {
@@ -33,7 +32,7 @@ const App = () => {
   // };
 
   return (
-    <div>
+    <div className="bg-light-black h-screen w-screen">
       <h1>Movie List</h1>
       <MovieList movies={movies}  />
     </div>
