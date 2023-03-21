@@ -8,9 +8,13 @@ interface Movie {
 }
 interface Props {
   movies: Movie[];
+  addMovie: (movie: Movie) => void;
 }
 
-const MovieList = ({ movies }: Props) => {
+const MovieList = ({ movies, addMovie }: Props) => {
+  const handleAddMovie = () => {
+    addMovie({ title: "New Movie", poster_path :"jwdijdws",id : 11 });
+  };
   return (
     <ul>
       {movies.map(movie => (
@@ -19,7 +23,9 @@ const MovieList = ({ movies }: Props) => {
           {movie.title} (<img src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}  alt="Movie Image" />)
         </li>
       ))}
+        <button onClick={handleAddMovie}>Add Movie</button>
     </ul>
+   
   );
 };
 

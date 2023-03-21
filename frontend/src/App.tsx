@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import MovieList from './MovieLists';
 
 interface Movie {
@@ -8,7 +8,16 @@ interface Movie {
 
 }
 
-const movies: Movie[] = [
+// function App() {
+//   return (
+//     <div className="App">
+//       <MovieList movies={movies} />
+//     </div>
+//   );
+// }
+
+const App = () => {
+  const [movies, setMovies] = useState<Movie[]>([   
     {
       "id": 32516,
       "poster_path": "/A1yymig7S0FTWv9cTtOwdI1cH5V.jpg",
@@ -24,14 +33,19 @@ const movies: Movie[] = [
         "poster_path": "/dm06L9pxDOL9jNSK4Cb6y139rrG.jpg",
         "title": "Knock at the Cabin",
     },
-];
+  ]);
 
-function App() {
+  const addMovie = (movie: Movie) => {
+    setMovies([...movies, movie]);
+  };
+
   return (
-    <div className="App">
-      <MovieList movies={movies} />
+    <div>
+      <h1>Movie List</h1>
+      <MovieList movies={movies} addMovie={addMovie} />
     </div>
   );
-}
+};
+
 
 export default App;
