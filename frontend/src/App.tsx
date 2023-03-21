@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MovieList from './MovieLists';
+import './index.css';
 
 interface Movie {
   title: string;
@@ -7,14 +8,6 @@ interface Movie {
   id:number;
 
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <MovieList movies={movies} />
-//     </div>
-//   );
-// }
 
 const App = () => {
   const [movies, setMovies] = useState<Movie[]>([   
@@ -35,14 +28,14 @@ const App = () => {
     },
   ]);
 
-  const addMovie = (movie: Movie) => {
-    setMovies([...movies, movie]);
-  };
+  // const addMovie = (movie: Movie) => {
+  //   setMovies([...movies, movie]);
+  // };
 
   return (
     <div>
       <h1>Movie List</h1>
-      <MovieList movies={movies} addMovie={addMovie} />
+      <MovieList movies={movies}  />
     </div>
   );
 };
