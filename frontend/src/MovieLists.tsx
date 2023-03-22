@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { getMovies } from './api';
 import { Movie } from './types';
 
+
 type FormData = {
   search: string;
 };
