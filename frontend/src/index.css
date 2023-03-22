@@ -18,6 +18,7 @@ code {
 .card {
   position: relative;
   perspective: 1000px;
+  
 }
 
 .card:hover .front {
@@ -52,5 +53,8 @@ code {
   display: none;
 }
 
+.card-container {
+  height: 400px; 
+}
 
 

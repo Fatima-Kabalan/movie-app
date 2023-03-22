@@ -52,7 +52,7 @@ const MovieList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"> 
           {filteredMovies.map((movie: Movie) => (
              <a key={movie.id} href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank">
-               <div key={movie.id} className=" card bg-black rounded-lg overflow-hidden hover:opacity-60 relative">
+               <div key={movie.id} className=" card card-container bg-black rounded-lg overflow-hidden hover:opacity-60 relative">
                   <div className='front'>
                     <img
                       className="w-full h-65 object-cover"
