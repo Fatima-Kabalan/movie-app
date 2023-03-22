@@ -16,7 +16,6 @@ const MovieList = () => {
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     setSearchTerm(data.search);
-    console.log(data) 
   };
 
   const filteredMovies = movies.filter((movie: Movie) =>
@@ -42,7 +41,7 @@ const MovieList = () => {
         </div>
       </form>
       {isLoading ?  (
-        console.log("app is loading"), // start of the website and at first the isloading is true so message loading is displayed until the movie list is complete then it will become false
+       // start of the website and at first the isloading is true so message loading is displayed until the movie list is complete then it will become false
         <div>Loading... </div>
       ) : filteredMovies.length ? (
         // styling the cards that include the poster, the title, and the review of the movie 
