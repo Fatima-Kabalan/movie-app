@@ -1,18 +1,36 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { getMovies } from "./api";
 import { Movie } from "./types";
+import axios from "axios";
 
 type FormData = {
   search: string;
 };
 
+const API_KEY = "7ddaebc6d7da9611149903cc8f5663c1";
+
 const MovieList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { register, handleSubmit } = useForm<FormData>();
   //useQuery is used to fetch the list of popular movies from the getMovies function when the component is first rendered
-  const { data: movies = [], isLoading } = useQuery("movies", getMovies);
+  // const { data: movies = [], isLoading } = useQuery("movies", getMovies);
+  const { data: movies = [], isLoading } = useQuery(
+    ["movies", searchTerm],
+    async () => {
+      if (!searchTerm) {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+        );
+        return response.data.results;
+      } else {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=1`
+        );
+        return response.data.results;
+      }
+    }
+  );
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     setSearchTerm(data.search);
@@ -23,8 +41,6 @@ const MovieList = () => {
   const filteredMovies = movies.filter((movie: Movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const [activeTooltip, setActiveTooltip] = useState("");
 
   return (
     <div className="container mx-auto py-9">
