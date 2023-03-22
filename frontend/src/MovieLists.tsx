@@ -11,10 +11,12 @@ type FormData = {
 const MovieList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { register, handleSubmit } = useForm<FormData>();
+  //useQuery is used to fetch the list of popular movies from the getMovies function when the component is first rendered
   const { data: movies = [], isLoading } = useQuery('movies', getMovies);
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     setSearchTerm(data.search);
+    console.log(data) 
   };
 
   const filteredMovies = movies.filter((movie: Movie) =>
@@ -39,14 +41,17 @@ const MovieList = () => {
           </button>
         </div>
       </form>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+      {isLoading ?  (
+        console.log("app is loading"), // start of the website and at first the isloading is true so message loading is displayed until the movie list is complete then it will become false
+        <div>Loading... </div>
+      ) : filteredMovies.length ? (
+        // styling the cards that include the poster, the title, and the review of the movie 
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"> 
           {filteredMovies.map((movie: Movie) => (
+            // displaying the image, review, and the title whose background is black
             <div key={movie.id} className="bg-black rounded-lg overflow-hidden">
               <img
-                className="w-full h-64 object-cover"
+                className="w-full h-65 object-cover"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
               />
@@ -57,7 +62,9 @@ const MovieList = () => {
             </div>
           ))}
         </div>
-      )}
+         ) : (
+          <div className="text-center mt-8">No results found.</div>
+        )}
     </div>
   );
 };
