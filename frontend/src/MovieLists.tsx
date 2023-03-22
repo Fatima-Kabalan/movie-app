@@ -13,8 +13,8 @@ const API_KEY = "7ddaebc6d7da9611149903cc8f5663c1";
 const MovieList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { register, handleSubmit } = useForm<FormData>();
+  
   //useQuery is used to fetch the list of popular movies from the getMovies function when the component is first rendered
-  // const { data: movies = [], isLoading } = useQuery("movies", getMovies);
   const { data: movies = [], isLoading } = useQuery(
     ["movies", searchTerm],
     async () => {
