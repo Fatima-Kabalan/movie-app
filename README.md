@@ -20,7 +20,7 @@
 
 | Home                                       | Search                                         |  Description                                        | 
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|
-| <img src="./public/home.png" width="200"/> | <img src="./public/search.png" width="200"/> | <img src="./public/description.png" width="200"/> 
+| <img src="././public/home.png" width="200"/> | <img src="./public/search.png" width="200"/> | <img src="./public/description.png" width="200"/> 
 
 <br><br>
 
