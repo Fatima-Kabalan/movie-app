@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #141414; /* Adjust the opacity to change the darkness of the background color */
+  background-color: #141414; 
 }
 
 code {
@@ -11,14 +11,9 @@ code {
     monospace;
 }
 
-.bg-light-black {
-  background-color: #141414; /* Adjust the opacity to change the darkness of the background color */
-  
-}
 .card {
   position: relative;
-  perspective: 1000px;
-  
+  perspective: 1000px; 
 }
 
 .card:hover .front {

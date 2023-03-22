@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { getMovies } from './api';
-import { Movie } from './types';
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { getMovies } from "./api";
+import { Movie } from "./types";
 
 type FormData = {
   search: string;
 };
 
 const MovieList = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const { register, handleSubmit } = useForm<FormData>();
   //useQuery is used to fetch the list of popular movies from the getMovies function when the component is first rendered
-  const { data: movies = [], isLoading } = useQuery('movies', getMovies);
+  const { data: movies = [], isLoading } = useQuery("movies", getMovies);
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     setSearchTerm(data.search);
@@ -24,14 +24,14 @@ const MovieList = () => {
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const[activeTooltip, setActiveTooltip] = useState('');
+  const [activeTooltip, setActiveTooltip] = useState("");
 
   return (
     <div className="container mx-auto py-9">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center border-b border-b-2 border-red-700 py-2">
           <input
-            {...register('search')}
+            {...register("search")}
             className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
             type="text"
             placeholder="Search movies..."
@@ -44,37 +44,42 @@ const MovieList = () => {
           </button>
         </div>
       </form>
-      {isLoading ?  (
-       // start of the website and at first the isloading is true so message loading is displayed until the movie list is complete then it will become false
+      {isLoading ? (
+        // start of the website and at first the isloading is true so message loading is displayed until the movie list is complete then it will become false
         <div>Loading... </div>
       ) : filteredMovies.length ? (
-        // styling the cards that include the poster, the title, and the review of the movie 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"> 
+        // styling the cards that include the poster, the title, and the review of the movie
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
           {filteredMovies.map((movie: Movie) => (
-             <a key={movie.id} href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank">
-               <div key={movie.id} className=" card card-container bg-black rounded-lg overflow-hidden hover:opacity-60 relative">
-                  <div className='front'>
-                    <img
-                      className="w-full h-65 object-cover"
-                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                      alt={movie.title}
-                    />
-                  </div>
-                  <div className=" p-4  top-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition-opacity duration-300">
-                    <h2 className="text-lg font-bold mb-2">{movie.title}</h2>
-                    <p className="text-black-700">{movie.overview}</p>
-                  </div>
+            <a
+              key={movie.id}
+              href={`https://www.themoviedb.org/movie/${movie.id}`}
+              target="_blank"
+            >
+              <div
+                key={movie.id}
+                className="card card-container bg-black rounded-lg overflow-hidden hover:opacity-60 relative"
+              >
+                <div className="front">
+                  <img
+                    className="w-full h-65 object-cover"
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                  />
                 </div>
+                <div className=" p-4  top-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition-opacity duration-300">
+                  <h2 className="text-lg font-bold mb-2">{movie.title}</h2>
+                  <p className="text-black-700">{movie.overview}</p>
+                </div>
+              </div>
             </a>
           ))}
         </div>
-         ) : (
-          <div className="text-center mt-8">No results found.</div>
-        )}
+      ) : (
+        <div className="text-center mt-8">No results found.</div>
+      )}
     </div>
   );
 };
 
 export default MovieList;
-
-
