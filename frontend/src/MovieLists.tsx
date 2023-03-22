@@ -22,9 +22,9 @@ const MovieList = () => {
   );
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-9">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
+        <div className="flex items-center border-b border-b-2 border-red-700 py-2">
           <input
             {...register('search')}
             className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
