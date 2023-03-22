@@ -3,7 +3,7 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 
-**[PROJECT PHILOSOPHY](https://github.com/Fatima-Kabalan/movie-app.git#-project-philosophy) • [TECH STACK](https://github.com/Fatima-Kabalan/movie-app.git#-tech-stack) • [IMPLEMENTATION](https://github.com/Fatima-Kabalan/movie-app.git#-impplementation)**
+**[PROJECT PHILOSOPHY](https://github.com/Fatima-Kabalan/movie-app.git#-project-philosophy) • [TECH STACK](https://github.com/Fatima-Kabalan/movie-app.git#-tech-stack)**
 
 </div>
 
