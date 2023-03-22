@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './index.css';
 
 interface Movie {
@@ -9,34 +9,30 @@ interface Movie {
 }
 interface Props {
   movies: Movie[];
-  // addMovie: (movie: Movie) => void;
 }
 
-const MovieList = ({ movies }: Props) => {
-  // const handleAddMovie = () => {
-  //   addMovie({ title: "New Movie", poster_path :"jwdijdws",id : 11 });
-  // };
+
+const MovieList = ({ movies}: Props) => {
+  
   return (
-    // <ul>
-    //   {movies.map(movie => (
-    //     <li key={movie.title}>
-    //       <h3>{movie.title}</h3>
-    //       {movie.title} (<img src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}  alt="Movie Image" />)
-    //     </li>
-    //   ))}
-    //     {/* <button onClick={handleAddMovie}>Add Movie</button> */}
-    // </ul>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="flex flex-wrap justify-center gap-4 max-w-screen-lg mx-auto mt-8 overflow-x-auto">
       {movies.map((movie) => (
-        <div key={movie.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img className="w-full h-64 object-cover object-center" src={"https://image.tmdb.org/t/p/original/" + movie.poster_path} alt={movie.title} />
-          <div className="p-4">
-            <h2 className="font-bold text-xl mb-2">{movie.title}</h2>
+        <div key={movie.id} className="flex-none" style={{ width: "240px" }}>
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <img
+             src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}
+              alt={movie.title}
+              className="w-full h-72 object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-lg font-bold mb-2">{movie.title}</h2>
+              {/* <p className="text-sm">{movie.description}</p> */}
+            </div>
           </div>
         </div>
       ))}
     </div>
   );
 };
-
+  
 export default MovieList;
