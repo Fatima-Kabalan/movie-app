@@ -18,9 +18,13 @@ const MovieList = () => {
     setSearchTerm(data.search);
   };
 
+  //filteredMovies array will contain only the movies whose title contains the searchTerm
+  //toLowerCase() method is called on both the title and the searchTerm to ensure that the comparison is case-insensitive.
   const filteredMovies = movies.filter((movie: Movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const[activeTooltip, setActiveTooltip] = useState('');
 
   return (
     <div className="container mx-auto py-9">
