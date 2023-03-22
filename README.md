@@ -18,12 +18,6 @@
 - As a user, I want to be able to find the link of the movie so that I can easily watch it
 <br><br>
 
-| Home                                       | Search                                         |  Description                                        | 
-|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|
-| <img src="../public/home.png" width="200"/> | <img src="./public/search.png" width="200"/> | <img src="./public/description.png" width="200"/> 
-
-<br><br>
-
 Here's a brief high-level overview of the tech stack the Well app uses:
 
 This project uses the <a href="https://react.dev/">React Library</a> , <a href="https://react-query-v3.tanstack.com/">React Query</a> ,<a href="https://developers.themoviedb.org/3/getting-started/introduction">The Movie Data Base TMDB, <a href="https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html">TypeScript</a>
