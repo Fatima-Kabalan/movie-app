@@ -52,7 +52,7 @@ const MovieList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"> 
           {filteredMovies.map((movie: Movie) => (
             // displaying the image, review, and the title whose background is black
-            <div key={movie.id} className="bg-black rounded-lg overflow-hidden">
+            <div key={movie.id} className="bg-black rounded-lg overflow-hidden hover:opacity-60">
               <img
                 className="w-full h-65 object-cover"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
