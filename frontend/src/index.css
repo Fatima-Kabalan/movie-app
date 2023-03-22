@@ -15,7 +15,6 @@ code {
   background-color: #141414; /* Adjust the opacity to change the darkness of the background color */
   
 }
-
 .card {
   position: relative;
   perspective: 1000px;
@@ -40,15 +39,18 @@ code {
   backface-visibility: hidden;
 }
 
+.front {
+  z-index: 2;
+}
 
 .back {
   transform: rotateY(180deg);
+  z-index: 1;
 }
 
 .back img {
   display: none;
 }
-
 
 
 

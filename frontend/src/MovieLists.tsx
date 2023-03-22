@@ -4,7 +4,6 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { getMovies } from './api';
 import { Movie } from './types';
 
-
 type FormData = {
   search: string;
 };
@@ -61,7 +60,7 @@ const MovieList = () => {
                   alt={movie.title}
                 />
               </div>
-              <div className="back p-4 absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition-opacity duration-300">
+              <div className=" p-4  top-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition-opacity duration-300">
                 <h2 className="text-lg font-bold mb-2">{movie.title}</h2>
                 <p className="text-black-700">{movie.overview}</p>
               </div>
