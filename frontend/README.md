@@ -1,46 +1,31 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+> Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 
-In the project directory, you can run:
+**[PROJECT PHILOSOPHY](https://github.com/Fatima-Kabalan/movie-app.git#-project-philosophy) • [TECH STACK](https://github.com/Fatima-Kabalan/movie-app.git#-tech-stack) • [IMPLEMENTATION](https://github.com/Fatima-Kabalan/movie-app.git#-impplementation)**
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br><br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+> This movie website allows the user to search for the movie he wants and gives him the link to watch it with a brief description about the movie.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User Stories
+- As a user, I want to search for a certain movie
+- As a user, I want to know what is the movie story(overview)
+- As a user, I want to be able to find the link of the movie so that I can easily watch it
+<br><br>
 
-### `npm run build`
+| Home                                       | Search                                         |  Description                                        | 
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|
+| <img src="./public/home.png" width="200"/> | <img src="./public/search.png" width="200"/> | <img src="./public/description.png" width="200"/> 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br><br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here's a brief high-level overview of the tech stack the Well app uses:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project uses the <a href="https://react.dev/">React Library</a> , <a href="https://react-query-v3.tanstack.com/">React Query</a> ,<a href="https://developers.themoviedb.org/3/getting-started/introduction">The Movie Data Base TMDB, <a href="https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html">TypeScript</a>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br><br>
